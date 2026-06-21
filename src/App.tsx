@@ -9,7 +9,8 @@ export const App = () => {
   const [todos, setTodos] = useState(
     todosFromServer.map(todo => ({
       ...todo,
-      user: usersFromServer.find(user => user.id === todo.userId) || null,
+      user:
+        usersFromServer.find(foundUser => foundUser.id === todo.userId) || null,
     })),
   );
 
@@ -19,7 +20,7 @@ export const App = () => {
       title,
       userId,
       completed: false,
-      user: usersFromServer.find(user => user.id === userId) || null,
+      user: usersFromServer.find(foundUser => foundUser.id === userId) || null,
     };
 
     setTodos([...todos, newTodo]);
