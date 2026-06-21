@@ -16,7 +16,7 @@ export const App = () => {
 
   const addNewPost = (title: string, userId: number) => {
     const newTodo = {
-      id: Math.max(...todos.map(todo => todo.id)) + 1,
+      id: Math.max(...todos.map(todoItem => todoItem.id)) + 1,
       title,
       userId,
       completed: false,
